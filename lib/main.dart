@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp/features/landing/screens/landing_screen.dart';
 import 'package:whatsapp/firebase_options.dart';
 import 'package:whatsapp/responsive_layout.dart';
 import 'package:whatsapp/screens/mobile_screen_layout.dart';
@@ -27,7 +28,6 @@ class MyApp extends StatelessWidget {
         title: 'Whatsapp',
         theme:
             ThemeData.dark().copyWith(scaffoldBackgroundColor: backgroundColor),
-        home: const ResponsiveLayout(
-            mobileScreen: MobileScreenLayout(), webScreen: WebScreenLayout()));
+        home: const LandingScreen());
   }
 }
