@@ -37,6 +37,7 @@ dependencies:
   firebase_storage: ^11.0.7
   flutter:
     sdk: flutter
+  riverpod: ^2.1.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
