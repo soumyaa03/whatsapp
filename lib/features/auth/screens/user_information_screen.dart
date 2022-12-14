@@ -76,7 +76,7 @@ class _UserInformationScreenState extends ConsumerState<UserInformationScreen> {
                   child: TextField(
                     controller: nameController,
                     decoration:
-                        const InputDecoration(hintText: 'Enter your name'),
+                        const InputDecoration(hintText: 'Enter your Name'),
                   ),
                 ),
                 IconButton(
