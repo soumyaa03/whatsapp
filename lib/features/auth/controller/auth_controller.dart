@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:riverpod/riverpod.dart';
 
 import 'package:whatsapp/features/auth/repository/auth_repository.dart';
+import 'package:whatsapp/models/user_model.dart';
 
 final authControllerProvider = Provider(((ref) {
   final authRepository = ref.watch(authRepositoryProvider);
@@ -11,6 +12,10 @@ final authControllerProvider = Provider(((ref) {
   return AuthController(authRepository: authRepository, ref: ref);
 }));
 
+final userDataAuthProvider = FutureProvider(((ref) {
+  final authController = ref.watch(authControllerProvider);
+  return authController.getUserData();
+}));
 //have provider variables Global => general rule in RiverPod
 
 class AuthController {
@@ -20,6 +25,11 @@ class AuthController {
     required this.authRepository,
     required this.ref,
   });
+
+  Future<UserModel?> getUserData() async {
+    UserModel? user = await authRepository.getCurrentUserData();
+    return user;
+  }
 
   void signInWithPhone(BuildContext context, String phoneNumber) {
     authRepository.signInWithPhone(context, phoneNumber);
