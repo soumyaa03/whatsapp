@@ -30,8 +30,8 @@ class ChatList extends ConsumerWidget {
                 if (messages[index]['isMe'] == true) {
                   //my card
                   return MyMessageCard(
-                    date: messageData.text,
-                    message: messages[index]['text'].toString(),
+                    date: messages[index]['time'].toString(),
+                    message: messageData.text,
                   );
                 }
                 //sender card
