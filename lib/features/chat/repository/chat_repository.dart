@@ -63,6 +63,10 @@ class ChatRepository {
       for (var document in event.docs) {
         messages.add(Message.fromMap(document.data()));
       }
+      if (messages[0].text.isEmpty) {
+        print('empty message');
+      }
+      print(messages[0].text);
       return messages;
     });
   }
