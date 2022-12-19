@@ -5,7 +5,7 @@ class Message {
   final String recieverId;
   final String text;
   final MessageEnum type;
-  final DateTime timesent;
+  final String timesent;
   final String messageId;
   final bool isSeen;
   Message({
@@ -24,7 +24,7 @@ class Message {
       'recieverId': recieverId,
       'text': text,
       'type': type.type,
-      'timesent': timesent.millisecondsSinceEpoch,
+      'timesent': timesent,
       'messageId': messageId,
       'isSeen': isSeen,
     };
@@ -36,7 +36,7 @@ class Message {
       recieverId: map['recieverId'] ?? '',
       text: map['text'] ?? '',
       type: (map['type'] as MessageEnum),
-      timesent: DateTime.fromMillisecondsSinceEpoch(map['timesent']),
+      timesent: map['timesent'],
       messageId: map['messageId'] ?? '',
       isSeen: map['isSeen'] ?? false,
     );
